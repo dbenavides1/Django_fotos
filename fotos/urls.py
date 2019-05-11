@@ -29,6 +29,6 @@ urlpatterns = [
     path('', views.base, name='base'),
     #
     path('photo/<int:pk>/update/',views.PhotoUpdate.as_view(), name='photo-update'),
-    path('photo/<int:pk>/create/',views.PhotoCreate.as_view(), name='photo-create'),
+    path('photo/create/',views.PhotoCreate.as_view(), name='photo-create'),
     path('photo/<int:pk>/delete/',views.PhotoDelete.as_view(), name='photo-delete'),
 ]
