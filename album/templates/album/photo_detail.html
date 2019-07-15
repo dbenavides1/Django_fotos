@@ -1,4 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'adminlte/base.html' %}
+{% block content %}
+
 {% load static %}
 
 {% block section %}
@@ -25,4 +27,6 @@
         <img src="{% static object.photo.url %}" style="width:550px;height:420px"/>
     </div> 
 </div>
-{% endblock maincontent %} 
+{% endblock maincontent %}
+
+{% endblock %}

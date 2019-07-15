@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
 
 class Category(models.Model):
     """ Categorias para clasificar las fotos """
@@ -23,3 +25,9 @@ class Photo(models.Model):
 
 def get_absolute_url(self):
     return reverse('photo-list')
+
+
+@receiver(post_delete, sender=Photo)
+def photo_delete(sender, instance, **kwargs):
+    """ Borra los ficheros de las fotos que se eliminan. """
+    instance.photo.delete(False)

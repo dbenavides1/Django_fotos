@@ -38,6 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'album',
+
+    # The general purpose templates
+    'django_adminlte',
+
+    # Optional: Skin for the admin interface
+    'django_adminlte_theme',
+
+    # Any apps which need to have their templates overridden by adminlte
+    #'django.contrib.admin',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +137,7 @@ TEMPLATE_DIRS = (
 STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'media'),
 )
+
+# my_project/settings.py
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/accounts/login'
